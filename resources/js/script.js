@@ -1,10 +1,18 @@
 "use strict";
 
 let navLink = document.querySelector(".nav-link");
-
+let noDataFound = document.querySelector(".no-data-found");
 let fetchTwo, dataTwo;
 const newsBlog = document.getElementById("news-blog");
 const newsUl = document.getElementById("news-ul");
+const toggleSpinner = (hasSpinner) => {
+  const loader = document.getElementById("loader");
+  if (hasSpinner) {
+    loader.classList.remove("d-none");
+  } else {
+    loader.classList.add("d-none");
+  }
+};
 const reporter = async function (id) {
   const categoryUrl = ` https://openapi.programming-hero.com/api/news/categories`;
 
@@ -24,9 +32,13 @@ const reporter = async function (id) {
     dataTwo = dataTwo.slice(0, 10);
     let length = dataTwo.length;
     if (length === 0) {
-      console.log("dataTwo length =0");
+      noDataFound.classList.remove("d-none");
+      newsBlog.appendChild(noDataFound);
     } else {
       ////news-div
+
+      noDataFound.classList.add("d-none");
+
       dataTwo.forEach((el) => {
         let classAdd = function (className) {
           newsChildDiv.classList.add(`${className}`);
@@ -42,14 +54,35 @@ const reporter = async function (id) {
         console.log(el);
         // console.log(el.thumbnail_url);
         let authorName = el.author.name;
-        let authorImg = el.image_url;
+        let authorimg = el.author.img;
+        console.log(authorimg);
+        let img = el.image_url;
         let authorHeadLine = el.title;
         let ratingNumber = el.rating.number;
-        let authorThumbnail = el.thumbnail_url;
-        console.log(ratingNumber);
+        let timeZone = el.author.published_date;
+        let time = new Date(parseInt(timeZone) / (1000 * 60 * 60 * 24));
+        let year = time.getFullYear();
+        let days = time.getDay();
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        let month = monthNames[time.getMonth()];
+
         newsChildDiv.innerHTML = `
         <div class="col-sm-4" style="width: 300px">
-        <img src="${authorImg}" class="rounded float-start" alt="..." style="height: 100%; width: 100%" />
+        <img src="${img}" class="rounded float-start" alt="..." style="height: 100%; width: 100%" />
       </div>
    
       <div class="col-sm-8">
@@ -68,12 +101,12 @@ const reporter = async function (id) {
               <div class="item-1">
                 <div class="author-details d-flex flex-row">
                   <div class="author img mx-3" style="width: 50px">
-                    <img class="rounded-circle" src="${authorThumbnail}" alt="" style="width: 100%" />
+                    <img class="rounded-circle" src="${authorimg}" alt="" style="width: 100%" />
                   </div>
                   <div class="author">
                     <div class="authors-about">
                       <h4>${authorName}</h4>
-                      <p class="fs-4">Jan 10, 2022</p>
+                      <p class="fs-4">${month} ${days},${year}</p>
                     </div>
                   </div>
                 </div>
@@ -134,13 +167,16 @@ const reporter = async function (id) {
 
     newsUl.appendChild(newsLi);
   });
+
   newsUl.addEventListener("click", function (e) {
     e.preventDefault();
-    // console.log(e.target);
+
     newsBlog.innerHTML = "";
     if (e.target.classList.contains("nav-link")) {
       const id = e.target.getAttribute("href");
+
       fetchTwo(id);
+      toggleSpinner(false);
     }
   });
 };
