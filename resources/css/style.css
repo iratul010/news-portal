@@ -16,3 +16,8 @@ html {
 .container {
   overflow-y: hidden;
 }
+.daily-news-font {
+  letter-spacing: 3px;
+  font-family: "Italianno", cursive;
+  font-family: "Kaushan Script", cursive;
+}
