@@ -1,0 +1,18 @@
+html {
+  font-size: 62.5%;
+}
+.navbar-right {
+  display: flex;
+
+  list-style: none;
+}
+.navbar-right li:not(:last-child) {
+  margin-right: 1rem;
+}
+.navbar-nav {
+  font-size: 1.8rem;
+}
+
+.container {
+  overflow-y: hidden;
+}
