@@ -217,7 +217,7 @@ const reporter = async function () {
 
     newsLi.innerHTML = `
         
-        <a class="nav-link" href="${id}"> ${el.category_name}</a>
+        <a class="nav-link button" type="button"  href="${id}"> ${el.category_name}</a>
         `;
 
     newsUl.appendChild(newsLi);
