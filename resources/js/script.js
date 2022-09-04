@@ -92,7 +92,7 @@ const reporter = async function () {
         let month = monthNames[time.getMonth()];
 
         newsChildDiv.innerHTML = `
-        <div class="col-sm-4" style="width: 300px">
+        <div class="col-sm-4" >
         <img src="${img}" class="rounded float-start" alt="..." style="height: 100%; width: 100%" />
       </div>
    
@@ -188,7 +188,7 @@ const reporter = async function () {
                 <div class="col-md-8 col-8" style="height: 200px; width: 220px">
                   <img style="width: 100%" src="${reporterImg}" alt="" />
                 </div>
-                <div class="col-md-4  ms-auto text-center  ">
+                <div class="col-md-4  ms-auto text-center p-4 ">
                   <h3 class="heading-primary fs-2">${reporterName}</h3>
                   <p class="fs-4">${
                     monthNames[reporterDate.getMonth()]
