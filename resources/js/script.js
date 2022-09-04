@@ -17,10 +17,14 @@ const toggleSpinner = (hasSpinner) => {
 toggleSpinner(false);
 const reporter = async function () {
   const categoryUrl = ` https://openapi.programming-hero.com/api/news/categories`;
-
-  const res = await fetch(categoryUrl);
-  const data = await res.json();
-  const dataOne = data.data.news_category;
+  let res, data, dataOne;
+  try {
+    res = await fetch(categoryUrl);
+    data = await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+  dataOne = data.data.news_category;
   console.log(dataOne);
   fetchTwo = async function (id) {
     const newsUrl = `  https://openapi.programming-hero.com/api/news/category/${id}`;
