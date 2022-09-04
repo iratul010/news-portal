@@ -231,3 +231,8 @@ const reporter = async function () {
   });
 };
 reporter(5);
+// const btnNews = document.getElementById("news");
+// const btnBlog = document.getElementById("blog");
+// btnBlog.addEventListener("click", function () {
+//  console.log(btnBlog);
+// });
