@@ -41,7 +41,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#"> Blog</a>
+                <a class="nav-link" aria-current="page" href="/blog.html"> Blog</a>
               </li>
               <li class="nav-item" style="width: 100px">
                 <a class="" aria-current="page" href="#"
@@ -80,12 +80,16 @@
 
       <!-- 2nd nav end -->
     </header>
+    <!-- modal check -->
 
+    <!-- modal check -->
     <main>
-      <section class="container container-xl bg-light">
+      <section class="container"></section>
+      <section class="container container-xl bg-light" style="min-height: 100vh">
         <div class="bg-white p-4 mt-5">
-          <h3 class="heading-primary">4 items found for category Entertainment</h3>
+          <h3 id="count-news-blog" class="heading-primary">0 items found for category Entertainment</h3>
         </div>
+
         <div class="mb-5 p-5">
           <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -111,7 +115,19 @@
             </div>
           </nav>
         </div>
+        <!-- loader -->
+        <div id="loader" class="row m-3 bg-white p-4 rounded text-center d-none">
+          <div style="height: 200px" class="border d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-center text-success">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- emd -->
         <!-- card -->
+
         <div class="container p-5 mb-5">
           <div class="d-flex flex-column" id="news-blog">
             <!-- 1 -->
@@ -254,9 +270,35 @@
               <h2 class="fs-1 p-3">No Data Found!</h2>
             </div>
             <!-- loader -->
-            <div class="d-flex justify-content-center d-none" id="loader">
-              <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+
+            <!-- end -->
+          </div>
+        </div>
+      </section>
+      <section>
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="modal-body">
+                <!-- body -->
+
+                <!-- body-end -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
               </div>
             </div>
           </div>

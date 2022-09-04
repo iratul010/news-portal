@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily News</title>
+    <link rel="stylesheet" href="/resources/css/style.css" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Kaushan+Script&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-white">
+    <header class="container container-xl bg-light d-flex flex-column justify-content-center p-3">
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <div
+            class="collapse navbar-collapse d-flex fs-3 fw-bold justify-content-between align-items-center p-2"
+            style="height: 80px"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link d-flex m-2 daily-news-font" aria-current="page" href="#"
+                  ><span id="navbar-brand" class="bg-primary bg-success text-white p-3 rounded m-2"> Daily </span
+                  ><span class="bg-white text-success p-3 rounded m-2"> News</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="mb-0 mb-lg-0 navbar-right px-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  ><span class="border-bottom text-success border-success">News</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"> Blog</a>
+              </li>
+              <li class="nav-item" style="width: 100px">
+                <a class="" aria-current="page" href="#"
+                  ><img class="rounded-circle" src="/resources/img/profile.jpg" alt="" style="width: 35%"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- 2nd nav -->
+
+      <ul
+        class="navbar-nav fs-2 d-flex flex-md-column flex-lg-row justify-content-evenly align-items-center navbar container p-4 border-bottom border-3"
+        id="news-ul"
+      >
+        <!-- <li class="nav-item fw-semibold">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item fw-semibold">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item fw-semibold">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item fw-semibold">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item fw-semibold">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item fw-semibold">
+          <a class="nav-link" href="#">Features</a>
+        </li> -->
+      </ul>
+
+      <!-- 2nd nav end -->
+    </header>
+    <!-- modal check -->
+
+    <!-- modal check -->
+    <main>
+      <section class="container container-xl bg-light" style="min-height: 100vh">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed fs-2"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                Difference between var, let and const ?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body fs-4">
+                In JavaScript, users can declare a variable using 3 keywords that are var, let, and const. <br />
+                <span class="fw-semibold"> Var:</span> <br />
+                The var is the oldest keyword to declare a variable in JavaScript. The scope is global when a var variable is
+                declared outside a function. This means that any variable that is declared with var outside a function block is
+                available for use in the whole window. <br />
+                <span class="fw-semibold"> Let :</span>
+                The let keyword is an improved version of the var keyword.The scope of a let variable is only block scoped. It
+                can’t be accessible outside the particular block.
+                <br />
+                <span class="fw-semibold"> const:</span>
+                When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot
+                update the const variable once it is declared.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button
+                class="accordion-button collapsed fs-2"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                Difference between Arrow & Regular functions ?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body fs-4">
+                <span class="fw-semibold">You can define JavaScript functions in many ways.</span> <br />
+                <span class="fw-semibold">Arrow Function:</span>
+                <br />
+                Arrow functions – a new feature introduced in ES6 – enable writing concise functions in JavaScript. While both
+                regular and arrow functions work in a similar manner, yet there are certain interesting differences between them,
+                as discussed below.Arrow functions do not have an arguments binding.However, if you want to access arguments in an
+                arrow function, you can use the rest operato. Arrow functions don’t have their own
+                <span class="fw-semibold">this</span>, and they don’t redefine the value of this within the function. Arrow
+                functions cannot be called with <span class="fw-semibold">“new"</span>.
+
+                <br />
+                <span class="fw-semibold">Regular Function:</span>
+                <br />
+                Regular functions created using function declarations or expressions are constructible and callable. Since regular
+                functions are constructible, they can be called using the new keyword. Regular function is the opposite of arrow
+                function.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button
+                class="accordion-button collapsed fs-2"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                Difference between Map, forEach, filter and find methods ?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseThree"
+              class="accordion-collapse collapse fs-4"
+              aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <br />
+                <span class="fw-semibold"> map: </span>
+                <br />
+                The map() method creates a new array populated with the results of calling a provided function on every element in
+                the calling array. ap does not mutate the array on which it is called (although callbackFn, if invoked, may do
+                so).
+                <br />
+                <span class="fw-semibold"> forEach: </span>
+                <br />
+                .forEach(), is used to execute the same code on every element in an array but does not change the array and it
+                returns undefined.
+
+                <br />
+                <span class="fw-semibold">filter: </span>
+                <br />
+                .filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the
+                elements that return truthy for the criteria.
+                <br />
+                <span class="fw-semibold">find: </span>
+                <br />
+                Function .find() is also a search function like the previous but they differ in one small detail — this function
+                returns only one match in an array. If in an array is more than one result, the function will return the first
+                that has matched.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="container bg-dark d-flex flex-column text-center container-lg container-xl rounded">
+      <div class="container text-white">
+        <ul
+          class="navbar-nav fs-2 d-flex flex-md-column flex-lg-row justify-content-evenly align-items-center navbar container p-4"
+        >
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="text-center">
+          <p class="footer__copyright fs-4 text-white d-flex flex-row justify-content-center">
+            <span class="mx-3"> &copy; Copyright by</span>
+            <span
+              ><a class="nav-link twitter-link" target="_blank" href="https://twitter.com/Ratulis89878109">Ratul Islam</a></span
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://kit.fontawesome.com/124c85d99a.js" crossorigin="anonymous"></script>
+    <script src="/resources/js/script.js"></script>
+  </body>
+</html>
